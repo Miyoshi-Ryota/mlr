@@ -8,7 +8,7 @@ selectFeaturesGA = function(learner, task, resampling, measures, bit.names, bits
   minimize = opt.path$minimize[1]
   for (i in seq_len(mu)) {
     while (TRUE) {
-      states[[i]] = rbinom(length(bit.names), 1, 0.5)
+      states[[i]] = rbinom(length(bit.names), 1, 0.025)
       if (is.na(control$max.features) || sum(states[[i]] <= control$max.features)) {
         break
       }
